@@ -19,7 +19,7 @@
     "bn.js": "^5.2.1",
     "decimal.js": "^10.4.3",
     "framer-motion": "^11.3.19",
-    "next": "^15.3.2",
+    "next": "15.3.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "recharts": "^2.12.7"
