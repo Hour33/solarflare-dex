@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Orbitron', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+
+  --color-void: #050508;
+  --color-panel: #0a0a12;
+  --color-border: #1a1a2e;
+  --color-accent: #00ff88;
+  --color-gold: #f59e0b;
+  --color-plasma: #7c3aed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-void);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar        { width: 4px; height: 4px; }
+::-webkit-scrollbar-track  { background: var(--color-panel); }
+::-webkit-scrollbar-thumb  { background: #00ff8833; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #00ff8866; }
+
+/* Wallet adapter overrides */
+.wallet-adapter-button {
+  font-family: var(--font-mono) !important;
+  font-size: 13px !important;
+  height: 40px !important;
+  padding: 0 20px !important;
+  background: transparent !important;
+  border: 1px solid #00ff8840 !important;
+  color: #00ff88 !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.wallet-adapter-button:hover {
+  background: #00ff8810 !important;
+  border-color: #00ff88 !important;
+  box-shadow: 0 0 20px #00ff8830 !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  background: #0a0a12 !important;
+  border: 1px solid #1a1a2e !important;
+}
+
+/* Scanline overlay effect */
+@keyframes scanlines {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 100vh; }
+}
+
+.scanline::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Glow text effect */
+.text-glow {
+  text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+}
+
+/* Panel glass effect */
+.panel-glass {
+  background: rgba(10, 10, 18, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Accent border glow */
+.border-glow {
+  border-color: #00ff8840;
+  box-shadow: 0 0 20px #00ff8815, inset 0 0 20px #00ff8808;
+}
+
+/* Number flicker animation */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.85; }
+}
+
+.num-live {
+  animation: flicker 2s ease-in-out infinite;
+}
