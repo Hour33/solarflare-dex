@@ -1,0 +1,17 @@
+{
+  "name": "SolarFlare",
+  "symbol": "FLARE",
+  "description": "SolarFlare (FLARE) \u2014 A next generation Solana DeFi token with full on-chain tax and security controls.",
+  "image": "https://raw.githubusercontent.com/Hour33/solarflare-dex/main/flare-logo.png",
+  "external_url": "https://solarflare-dex.vercel.app",
+  "attributes": [],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://raw.githubusercontent.com/Hour33/solarflare-dex/main/flare-logo.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}
